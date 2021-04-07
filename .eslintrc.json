@@ -1,0 +1,22 @@
+{
+    "extends": "react-app",
+    "plugins": ["prettier", "simple-import-sort"],
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
+    "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "import/order": "off",
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error",
+        "prettier/prettier": ["error", { "singleQuote": true, "tabWidth": 4 }]
+    }
+}
