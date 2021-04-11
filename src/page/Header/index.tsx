@@ -20,18 +20,25 @@ const Header = () => {
     const onClick = () => store.setUsername && store.setUsername(inputValue);
 
     return (
-        <div className={style.search}>
-            <InputGroup>
-                <InputGroupAddon addonType="prepend">
-                    <InputGroupText>@</InputGroupText>
-                </InputGroupAddon>
-                <Input
-                    placeholder="Search for users"
-                    onChange={onInputChange}
-                />
-            </InputGroup>
+        <div className={style.container}>
+            <div className={style.search}>
+                <InputGroup>
+                    <InputGroupAddon addonType="prepend">
+                        <InputGroupText className={style.icon}>
+                            @
+                        </InputGroupText>
+                    </InputGroupAddon>
+                    <Input
+                        placeholder="Search for users"
+                        onChange={onInputChange}
+                        className={style.input}
+                    />
+                </InputGroup>
 
-            <Button onClick={onClick}>Search</Button>
+                <Button onClick={onClick} className={style.button}>
+                    Search
+                </Button>
+            </div>
         </div>
     );
 };

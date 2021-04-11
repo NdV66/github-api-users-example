@@ -1,0 +1,39 @@
+.boldInfo {
+    font-size: 18px;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.container {
+    padding-top: 30px;
+}
+
+.header {
+    display: flex;
+}
+
+.avatar {
+    $size: 64px;
+    $radius: 12px;
+
+    width: $size;
+    height: $size;
+    border-radius: $radius;
+}
+
+.name {
+    @extend .boldInfo;
+
+    padding-left: 18px;
+    align-self: flex-end;
+}
+
+.bio {
+    font-size: 14px;
+    line-height: 19px;
+    color: #828282;
+    font-weight: normal;
+
+    margin-top: 16px;
+}

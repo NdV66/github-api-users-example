@@ -12,7 +12,7 @@ interface Props {
 }
 
 const StoreContextWrapper = ({ children }: Props) => {
-    const [username, setUsername] = useState<string>();
+    const [username, setUsername] = useState<string>('NdV66');
 
     const values = {
         username,
