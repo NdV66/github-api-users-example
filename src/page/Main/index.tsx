@@ -1,19 +1,18 @@
 import { useContext } from 'react';
 
-import { useFetchUserData } from '../../api';
-import Loader from '../../components/Loader';
 import { StoreContext } from '../../store/context';
+import ReposInfo from './ReposInfo';
 import UserInfo from './UserInfo';
 
 const Main = () => {
     const { username } = useContext(StoreContext);
-    const { isLoading, error, data } = useFetchUserData(username || '');
 
-    if (isLoading) {
-        return <Loader />;
-    }
-
-    return data ? <UserInfo {...data} /> : null;
+    return username ? (
+        <>
+            <UserInfo username={username} />
+            <ReposInfo username={username} />
+        </>
+    ) : null;
 };
 
 export default Main;

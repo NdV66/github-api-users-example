@@ -1,19 +1,32 @@
-import { IUser } from '../../../api';
+import { useFetchUserData } from '../../../api';
+import Loader from '../../../components/Loader';
 import style from './style.module.scss';
 
-const UserInfo = ({ avatar_url, bio, name }: IUser) => (
-    <div className={style.container}>
-        <div className={style.header}>
-            <img
-                src={avatar_url}
-                alt="Selected user avatar"
-                className={style.avatar}
-            />
-            <span className={style.name}>{name}</span>
-        </div>
+interface IProps {
+    username: string;
+}
 
-        <p className={style.bio}>{bio}</p>
-    </div>
-);
+const UserInfo = ({ username }: IProps) => {
+    const { isLoading, data } = useFetchUserData(username);
+
+    if (isLoading) {
+        return <Loader />;
+    }
+
+    return data ? (
+        <div className={style.container}>
+            <div className={style.header}>
+                <img
+                    src={data.avatar_url}
+                    alt="Selected user avatar"
+                    className={style.avatar}
+                />
+                <h1 className={style.name}>{data.name}</h1>
+            </div>
+
+            <p className={style.bio}>{data.bio}</p>
+        </div>
+    ) : null;
+};
 
 export default UserInfo;
