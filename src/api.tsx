@@ -4,12 +4,13 @@ export interface IUser {
     avatar_url: string;
     name: string;
     bio: string;
+    public_repos: number;
 }
 
 export interface IRepo {
     name: string;
     stargazers_count: number;
-    url: string;
+    html_url: string;
 }
 
 const API_URL = 'https://api.github.com';
@@ -26,9 +27,11 @@ export const useFetchUserData = (username: string) => {
 };
 
 export const useFetchUserRepositories = (username: string) => {
-    const result = useQuery<IRepo[]>(username + 'repos', () =>
-        fetch(`${API_USERS}/${username}/repos`).then(resolveFetch)
-    );
+    const result = useQuery<IRepo[]>(username + 'repos', async () => {
+        const data = await fetch(`${API_USERS}/${username}/repos`);
+        const postsData = await data.json();
+        return postsData;
+    });
 
     return result;
 };

@@ -1,9 +1,9 @@
 import { IRepo } from '../../../api';
 import style from './style.module.scss';
 
-const RepoPanel = ({ name, stargazers_count, url }: IRepo) => (
+const RepoPanel = ({ name, stargazers_count, html_url }: IRepo) => (
     <div className={style.repoPanel}>
-        <a href={url}>{name}</a>
+        <a href={html_url}>{name}</a>
         {stargazers_count}
     </div>
 );
