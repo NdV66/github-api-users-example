@@ -1,5 +1,7 @@
 import { useQuery } from 'react-query';
 
+const REPO_NUMBER = 3;
+
 export interface IUser {
     avatar_url: string;
     name: string;
@@ -29,8 +31,21 @@ export const useFetchUserData = (username: string) => {
 export const useFetchUserRepositories = (username: string) => {
     const result = useQuery<IRepo[]>(username + 'repos', async () => {
         const data = await fetch(`${API_USERS}/${username}/repos`);
-        const postsData = await data.json();
-        return postsData;
+
+        const repos: IRepo[] = await data.json();
+        const filteredData = repos.filter((el) => !!el.stargazers_count);
+        const sortedData = filteredData.sort((a, b) => {
+            if (a.stargazers_count > b.stargazers_count) {
+                return -1;
+            }
+            if (a.stargazers_count < b.stargazers_count) {
+                return 1;
+            }
+            return 0;
+        });
+
+        const mostTrendingRepos = sortedData.slice(0, REPO_NUMBER);
+        return mostTrendingRepos;
     });
 
     return result;

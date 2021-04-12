@@ -16,7 +16,7 @@ const ReposInfo = ({ username }: IProps) => {
 
     return (
         <div className={style.container}>
-            <h2>Top repositories</h2>
+            <h2 className={style.title}>Top repositories</h2>
             {data?.map((el) => (
                 <RepoPanel key={el.name} {...el} />
             ))}
