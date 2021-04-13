@@ -10,8 +10,8 @@ const Main = () => {
 
     return username ? (
         <>
-            <UserInfo username={username} />
-            <ReposInfo username={username} />
+            <UserInfo username={username} data-testid="userInfo" />
+            <ReposInfo username={username} data-testid="reposInfo" />
         </>
     ) : (
         <NoDataInfo />

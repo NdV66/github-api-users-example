@@ -1,4 +1,4 @@
-import { IRepo } from '../../../api';
+import { IRepo } from '../../../api/interfaces';
 import style from './style.module.scss';
 
 const RepoPanel = ({ name, stargazers_count, html_url }: IRepo) => (
