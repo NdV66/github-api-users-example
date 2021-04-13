@@ -25,7 +25,7 @@ const Header = () => {
                 <InputGroup>
                     <InputGroupAddon addonType="prepend">
                         <InputGroupText className={style.icon}>
-                            @
+                            &#128269;
                         </InputGroupText>
                     </InputGroupAddon>
                     <Input

@@ -12,19 +12,19 @@ const App = () => (
     <QueryClientProvider client={queryClient}>
         <StoreContextWrapper>
             <Container>
-                <header>
+                <header data-testid="header">
                     <Header />
                 </header>
             </Container>
 
             <Container>
-                <main className="min-height">
+                <main className="min-height" data-testid="main">
                     <Main />
                 </main>
             </Container>
 
             <Container>
-                <footer>
+                <footer data-testid="footer">
                     <Footer />
                 </footer>
             </Container>
