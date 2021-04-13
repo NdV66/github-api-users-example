@@ -1,8 +1,15 @@
 @import "bootstrap/scss/bootstrap.scss";
 
+$primary-color: #452cdc;
+$white: #fff;
+
 .boldInfo {
     font-size: 18px;
     font-weight: bold;
     font-size: 18px;
     line-height: 24px;
+}
+
+.min-height {
+    min-height: calc(100vh - 84px - 56px); //header, footer
 }

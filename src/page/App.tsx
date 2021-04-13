@@ -2,6 +2,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { Container } from 'reactstrap';
 
 import StoreContextWrapper from '../store/context';
+import Footer from './Footer';
 import Header from './Header';
 import Main from './Main';
 
@@ -17,13 +18,15 @@ const App = () => (
             </Container>
 
             <Container>
-                <main>
+                <main className="min-height">
                     <Main />
                 </main>
             </Container>
 
             <Container>
-                <footer>footer here</footer>
+                <footer>
+                    <Footer />
+                </footer>
             </Container>
         </StoreContextWrapper>
     </QueryClientProvider>

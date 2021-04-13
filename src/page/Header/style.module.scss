@@ -1,3 +1,5 @@
+@import "../../styles/style.scss";
+
 $input-bg: #f0f3f4;
 $radius: 8px;
 
@@ -15,7 +17,7 @@ $radius: 8px;
 }
 
 .button {
-    $btn-color: #452cdc;
+    $btn-color: $primary-color;
 
     margin-left: 16px;
     background: $btn-color;
