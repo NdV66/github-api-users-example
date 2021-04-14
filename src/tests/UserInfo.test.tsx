@@ -41,9 +41,7 @@ describe('UserInfo', () => {
 
     test('Should render loader', () => {
         // @ts-ignore
-        ApiHelpers.fetchUserData = jest
-            .fn()
-            .mockResolvedValue({ isLoading: true });
+        ApiHelpers.fetchUserData = jest.fn();
         setup();
 
         expect(screen.getByTestId('loader')).toBeInTheDocument();

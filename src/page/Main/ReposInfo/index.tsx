@@ -14,14 +14,14 @@ const ReposInfo = ({ username }: IProps) => {
         return <Loader />;
     }
 
-    return (
+    return data ? (
         <div className={style.container}>
             <h2 className={style.title}>Top repositories</h2>
-            {data?.map((el) => (
+            {data.map((el) => (
                 <RepoPanel key={el.name} {...el} />
             ))}
         </div>
-    );
+    ) : null;
 };
 
 export default ReposInfo;
