@@ -23,6 +23,7 @@ export const fetchUserReposWithStars = async (username: string) => {
 };
 
 export const fetchUserData = async (username: string) => {
+    console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> AAAAAAAAAAA');
     const data = await fetch(`${API_USERS}/${username}`);
     const json = await data.json();
     return json;

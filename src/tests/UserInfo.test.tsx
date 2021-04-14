@@ -2,15 +2,8 @@ import { render, screen } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 import * as ApiHelpers from '../api/helpers';
-import { IUser } from '../api/interfaces';
 import UserInfo from '../page/Main/UserInfo';
-
-const USER: IUser = {
-    name: 'Mairon',
-    bio: 'bio bio bio here',
-    avatar_url: 'http://avatars/avatar.jpeg',
-    public_repos: 1,
-};
+import { USER } from './mocks';
 
 const setup = () => {
     const queryClient = new QueryClient({

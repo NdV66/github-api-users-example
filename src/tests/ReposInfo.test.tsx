@@ -2,16 +2,8 @@ import { render, screen } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 import * as ApiHelpers from '../api/helpers';
-import { IRepo } from '../api/interfaces';
 import ReposInfo from '../page/Main/ReposInfo';
-
-const REPOS: IRepo[] = [
-    {
-        name: 'my-test-repo-name',
-        stargazers_count: 5,
-        html_url: 'https://link/here.git',
-    },
-];
+import { REPOS } from './mocks';
 
 const setup = () => {
     const queryClient = new QueryClient();
