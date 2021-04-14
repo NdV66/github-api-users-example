@@ -35,7 +35,7 @@ describe('API', () => {
         expect(result.current.data).toEqual(USER);
     });
 
-    test('Should be resolved correctly (useFetchUserData)', async () => {
+    test('Should be resolved correctly (fetchUserReposWithStars)', async () => {
         // @ts-ignore
         ApiHelpers.fetchUserReposWithStars = jest.fn().mockResolvedValue(REPOS);
         const wrapper = setup();
